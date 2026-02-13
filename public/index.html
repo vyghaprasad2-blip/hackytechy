@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CertiCheck Authority</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-900 text-white font-sans p-10">
+    <div class="max-w-xl mx-auto space-y-8">
+        <h1 class="text-3xl font-bold text-center border-b pb-4">Certificate System</h1>
+
+        <div class="bg-slate-800 p-6 rounded-xl shadow-lg">
+            <h2 class="text-xl mb-4 font-semibold text-blue-400">Authority: Issue New ID</h2>
+            <div class="flex flex-col gap-3">
+                <input id="name" type="text" placeholder="Full Name" class="p-2 rounded bg-slate-700 border-none">
+                <input id="date" type="date" class="p-2 rounded bg-slate-700">
+                <input id="prog" type="text" placeholder="Program Name" class="p-2 rounded bg-slate-700">
+                <button onclick="generate()" class="bg-blue-600 p-2 rounded hover:bg-blue-500 transition">Generate & Save</button>
+            </div>
+            <p id="genResult" class="mt-4 text-center font-mono text-yellow-400"></p>
+        </div>
+
+        <div class="bg-slate-800 p-6 rounded-xl shadow-lg border-2 border-green-500/30">
+            <h2 class="text-xl mb-4 font-semibold text-green-400">Verify a Certificate</h2>
+            <div class="flex flex-col gap-3">
+                <input id="vId" type="text" placeholder="Enter ID (e.g., CERT-A1B2)" class="p-2 rounded bg-slate-700">
+                <input id="vName" type="text" placeholder="Enter Name Exactly" class="p-2 rounded bg-slate-700">
+                <button onclick="verify()" class="bg-green-600 p-2 rounded hover:bg-green-500 transition">Check Authenticity</button>
+            </div>
+            <div id="vResult" class="mt-4 p-3 rounded text-center hidden"></div>
+        </div>
+    </div>
+
+   <script>
+    async function verify() {
+        const res = await fetch('/api/verify', {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({
+                certId: document.getElementById('vId').value,
+                name: document.getElementById('vName').value
+            })
+        });
+
+        const data = await res.json();
+        const box = document.getElementById('vResult');
+
+        box.classList.remove('hidden', 'bg-red-500/20', 'bg-green-500/20');
+
+        if (data.valid) {
+            box.classList.add('bg-green-500/20', 'text-green-400');
+            box.innerHTML = `✅ VERIFIED<br>
+            Program: ${data.data.program}<br>
+            Issued: ${data.data.date}`;
+        } else {
+            box.classList.add('bg-red-500/20', 'text-red-400');
+            box.innerText = "❌ FAKE OR INVALID DATA";
+        }
+    }
+    async function generate() {
+    const name = document.getElementById('name').value.trim();
+    const date = document.getElementById('date').value;
+    const program = document.getElementById('prog').value.trim();
+    const resultBox = document.getElementById('genResult');
+
+    // Basic validation
+    if (!name || !date || !program) {
+        resultBox.textContent = "⚠ Please fill all fields!";
+        resultBox.classList.remove('text-yellow-400', 'text-red-400');
+        resultBox.classList.add('text-red-400');
+        return;
+    }
+
+    try {
+        const res = await fetch('/api/generate', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ name, date, program })
+        });
+
+        const data = await res.json();
+
+        if (res.ok) {
+            resultBox.classList.remove('text-red-400');
+            resultBox.classList.add('text-yellow-400');
+            resultBox.innerHTML = `✅ Certificate Generated!<br>ID: <strong>${data.certId}</strong>`;
+        } else {
+            resultBox.classList.remove('text-yellow-400');
+            resultBox.classList.add('text-red-400');
+            resultBox.textContent = `❌ Error: ${data.error || 'Generation failed'}`;
+        }
+    } catch (err) {
+        resultBox.classList.remove('text-yellow-400');
+        resultBox.classList.add('text-red-400');
+        resultBox.textContent = "❌ Network or Server Error";
+    }
+}
+
+</script>
+           
+</body>
+</html>

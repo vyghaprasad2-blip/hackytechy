@@ -1,0 +1,27 @@
+{
+  "name": "hackytechy",
+  "version": "1.0.0",
+  "description": "<p align=\"center\">\r   <img src=\"./img.png\" alt=\"Project Banner\" width=\"100%\">\r </p>",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vyghaprasad2-blip/hackytechy.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/vyghaprasad2-blip/hackytechy/issues"
+  },
+  "homepage": "https://github.com/vyghaprasad2-blip/hackytechy#readme",
+  "dependencies": {
+    "express": "^5.2.1",
+    "mongoose": "^9.2.1",
+    "uuid": "^13.0.0"
+  }
+}

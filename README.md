@@ -13,8 +13,7 @@
 - Member 2:Vygha prasad - LBSITW
 
 ### Hosted Project Link
-[mention your project hosted link here]
-
+https://hackytechy.onrender.com/
 ### Project Description
 [CertiCheck is a full-stack web application designed to eliminate credential fraud by providing a secure,real-time verification system for digital certificates and achievements.The platform serves as a bridge between issuing authorities and verifiers.]
 

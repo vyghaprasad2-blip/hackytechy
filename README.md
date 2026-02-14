@@ -320,6 +320,10 @@ https://github.com/user-attachments/assets/ea214c27-2228-4798-aae8-cbde2af65d3f
 
 
 ---
+**AI Tools Used
+
+**Tool used**chatgpt,gemini.
+During development, we used AI tools such as ChatGPT,gemini for guidance in debugging errors, understanding API documentation structure, improving code comments, and refining project documentation.
 
 
 ---

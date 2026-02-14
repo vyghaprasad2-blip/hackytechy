@@ -71,16 +71,11 @@ List the key features of your project:
 
 #### Screenshots (Add at least 3)
 
-![Screenshot1](Add screenshot 1 here with proper name)
-*Add caption explaining what this shows*
+<img width="896" height="468" alt="Screenshot 2026-02-14 024834" src="https://github.com/user-attachments/assets/fd994a6c-be3b-456c-bf91-a8b262886f7b" />
+*screenshots which shows the layout or the front page of the website*
 
-![Screenshot2](Add screenshot 2 here with proper name)
-*Add caption explaining what this shows*
+<img width="796" height="475" alt="Screenshot 2026-02-14 024744" src="https://github.com/user-attachments/assets/a4720d58-9098-470c-af0d-9938c578821d" />
 
-
-![<img width="896" height="468" alt="Screenshot 2026-02-14 024834" src="https://github.com/user-attachments/assets/fd994a6c-be3b-456c-bf91-a8b262886f7b" />
-](Add screenshot 3 here with proper name)
-*Add caption explaining what this shows*
 
 #### Diagrams
 
@@ -91,33 +86,9 @@ List the key features of your project:
 
 **Application Workflow:**
 
-![Workflow](docs/workflow.png)
-*Add caption explaining your workflow*
-
----
-
-### For Hardware:
-
-#### Schematic & Circuit
-
-![Circuit](Add your circuit diagram here)
-*Add caption explaining connections*
-
-![Schematic](Add your schematic diagram here)
-*Add caption explaining the schematic*
-
-#### Build Photos
-
-![Team](Add photo of your team here)
-
-![Components](Add photo of your components here)
-*List out all components shown*
-
-![Build](Add photos of build process here)
-*Explain the build steps*
-
-![Final](Add photo of final product here)
-*Explain the final build*
+![[DocScanner 14 Feb 2026 7-07 am.pdf](https://github.com/user-attachments/files/25309503/DocScanner.14.Feb.2026.7-07.am.pdf)
+](docs/workflow.png)
+*explains the workflow of the project*
 
 ---
 
@@ -127,31 +98,37 @@ List the key features of your project:
 
 #### API Documentation
 
-**Base URL:** `https://api.yourproject.com`
+**Base URL:** `http://localhost:3000
+`
 
 ##### Endpoints
 
 **GET /api/endpoint**
-- **Description:** [What it does]
+- **Description:** [Generates a unique certificate ID and stores certificate details in the database.]
 - **Parameters:**
-  - `param1` (string): [Description]
-  - `param2` (integer): [Description]
+  - `param1` (string): [None (Data is sent in request body)]
+  - `param2` (integer): [None (Data is sent in request body)]
 - **Response:**
 ```json
-{
-  "status": "success",
-  "data": {}
+
+  {
+  "certId": "CERT-A1B2C3D4"
 }
+
+
 ```
 
 **POST /api/endpoint**
-- **Description:** [What it does]
+- **Description:** [Verifies certificate authenticity using certificate ID and name]
 - **Request Body:**
 ```json
-{
-  "field1": "value1",
-  "field2": "value2"
+
+  {
+  "name": "John Doe",
+  "date": "2026-02-14",
+  "program": "HackyTechy Internship"
 }
+
 ```
 - **Response:**
 ```json
@@ -161,94 +138,14 @@ List the key features of your project:
 }
 ```
 
-[Add more endpoints as needed...]
+{
+  "error": "All fields required"
+}
+
 
 ---
 
-### For Mobile Apps:
 
-#### App Flow Diagram
-
-![App Flow](docs/app-flow.png)
-*Explain the user flow through your application*
-
-#### Installation Guide
-
-**For Android (APK):**
-1. Download the APK from [Release Link]
-2. Enable "Install from Unknown Sources" in your device settings:
-   - Go to Settings > Security
-   - Enable "Unknown Sources"
-3. Open the downloaded APK file
-4. Follow the installation prompts
-5. Open the app and enjoy!
-
-**For iOS (IPA) - TestFlight:**
-1. Download TestFlight from the App Store
-2. Open this TestFlight link: [Your TestFlight Link]
-3. Click "Install" or "Accept"
-4. Wait for the app to install
-5. Open the app from your home screen
-
-**Building from Source:**
-```bash
-# For Android
-flutter build apk
-# or
-./gradlew assembleDebug
-
-# For iOS
-flutter build ios
-# or
-xcodebuild -workspace App.xcworkspace -scheme App -configuration Debug
-```
-
----
-
-### For Hardware Projects:
-
-#### Bill of Materials (BOM)
-
-| Component | Quantity | Specifications | Price | Link/Source |
-|-----------|----------|----------------|-------|-------------|
-| Arduino Uno | 1 | ATmega328P, 16MHz | ₹450 | [Link] |
-| LED | 5 | Red, 5mm, 20mA | ₹5 each | [Link] |
-| Resistor | 5 | 220Ω, 1/4W | ₹1 each | [Link] |
-| Breadboard | 1 | 830 points | ₹100 | [Link] |
-| Jumper Wires | 20 | Male-to-Male | ₹50 | [Link] |
-| [Add more...] | | | | |
-
-**Total Estimated Cost:** ₹[Amount]
-
-#### Assembly Instructions
-
-**Step 1: Prepare Components**
-1. Gather all components listed in the BOM
-2. Check component specifications
-3. Prepare your workspace
-![Step 1](images/assembly-step1.jpg)
-*Caption: All components laid out*
-
-**Step 2: Build the Power Supply**
-1. Connect the power rails on the breadboard
-2. Connect Arduino 5V to breadboard positive rail
-3. Connect Arduino GND to breadboard negative rail
-![Step 2](images/assembly-step2.jpg)
-*Caption: Power connections completed*
-
-**Step 3: Add Components**
-1. Place LEDs on breadboard
-2. Connect resistors in series with LEDs
-3. Connect LED cathodes to GND
-4. Connect LED anodes to Arduino digital pins (2-6)
-![Step 3](images/assembly-step3.jpg)
-*Caption: LED circuit assembled*
-
-**Step 4: [Continue for all steps...]**
-
-**Final Assembly:**
-![Final Build](images/final-build.jpg)
-*Caption: Completed project ready for testing*
 
 ---
 
@@ -258,13 +155,14 @@ xcodebuild -workspace App.xcworkspace -scheme App -configuration Debug
 
 **Basic Usage:**
 ```bash
-python script.py [options] [arguments]
+node cert-cli.js [command] [options]
+
 ```
 
 **Available Commands:**
-- `command1 [args]` - Description of what command1 does
-- `command2 [args]` - Description of what command2 does
-- `command3 [args]` - Description of what command3 does
+- `command1 [generate <name> <date> <program>]` - Generates a new certificate and returns a unique Certificate ID.
+- `command2 [verify <certId> <name>]` - Verifies whether the certificate is valid or not
+- `command3 [list]` - Lists all generated certificates (admin use only)
 
 **Options:**
 - `-h, --help` - Show help message and exit
@@ -277,16 +175,27 @@ python script.py [options] [arguments]
 
 ```bash
 # Example 1: Basic usage
-python script.py input.txt
+node cert-cli.js generate "John Doe" "2026-02-14" "HackyTechy Internship"
 
-# Example 2: With verbose output
-python script.py -v input.txt
+Certificate Generated Successfully
+Certificate ID: CERT-A1B2C3D4
 
-# Example 3: Specify output file
-python script.py -o output.txt input.txt
 
-# Example 4: Using configuration
-python script.py -c config.json --verbose input.txt
+node cert-cli.js verify CERT-A1B2C3D4 "John Doe"
+
+
+Certificate Status: VALID
+Program: HackyTechy Internship
+Date: 2026-02-14
+
+
+Certificate Status: INVALID
+
+node cert-cli.js list
+
+
+
+
 ```
 
 #### Demo Output
@@ -319,14 +228,60 @@ Output saved to: output.txt
 **Input:**
 ```json
 {
-  "name": "test",
-  "value": 123
+ node cert-cli.js generate "John Doe" "2026-02-14" "HackyTechy Internship"
+
 }
 ```
 
 **Command:**
 ```bash
-python script.py -v --format json data.json
+// Import required modules
+const express = require('express');
+const mongoose = require('mongoose');
+const { v4: uuidv4 } = require('uuid');
+
+// Initialize Express app
+const app = express();
+app.use(express.json());
+app.use(express.static('public')); // Serve frontend files
+
+// Connect to MongoDB database
+mongoose.connect('mongodb://127.0.0.1:27017/certDB')
+  .then(() => console.log("Database connected"))
+  .catch(err => console.error("Database connection error:", err));
+
+// Certificate Schema Definition
+// Stores certificate holder details and unique certificate ID
+const certSchema = new mongoose.Schema({
+  name: String,
+  date: String,
+  program: String,
+  certId: { type: String, unique: true }
+});
+
+// API Route: Generate Certificate
+// Creates a unique ID and stores certificate in database
+app.post('/api/generate', async (req, res) => {
+
+  // Extract data from request
+  const { name, date, program } = req.body;
+
+  // Validate input fields
+  if (!name || !date || !program) {
+    return res.status(400).json({ error: "All fields required" });
+  }
+
+  // Generate unique certificate ID using UUID
+  const certId = "CERT-" + uuidv4().split('-')[0].toUpperCase();
+
+  // Save certificate data to database
+  const newCert = new Certificate({ name, date, program, certId });
+  await newCert.save();
+
+  res.json({ certId });
+});
+
+
 ```
 
 **Output:**
@@ -335,13 +290,17 @@ python script.py -v --format json data.json
 [VERBOSE] Parsing JSON input...
 [VERBOSE] Processing data...
 {
-  "status": "success",
-  "processed": true,
-  "result": {
-    "name": "test",
-    "value": 123,
-    "timestamp": "2024-02-07T10:30:00"
-  }
+  Processing certificate generation...
+-----------------------------------
+Name: John Doe
+Program: HackyTechy Internship
+Date: 2026-02-14
+
+Certificate Generated Successfully!
+Certificate ID: CERT-A1B2C3D4
+
+Status: Success
+Saved to database.
 }
 [VERBOSE] Operation completed in 0.23s
 ```
@@ -351,47 +310,25 @@ python script.py -v --format json data.json
 ## Project Demo
 
 ### Video
-[Add your demo video link here - YouTube, Google Drive, etc.]
 
-*Explain what the video demonstrates - key features, user flow, technical highlights*
+
+https://github.com/user-attachments/assets/ea214c27-2228-4798-aae8-cbde2af65d3f
+
+
+
+*Explains how the demo website works and what it does*
 
 
 
 ---
 
-## AI Tools Used (Optional - For Transparency Bonus)
-
-If you used AI tools during development, document them here for transparency:
-
-**Tool Used:** [e.g., GitHub Copilot, v0.dev, Cursor, ChatGPT, Claude]
-
-**Purpose:** [What you used it for]
-- Example: "Generated boilerplate React components"
-- Example: "Debugging assistance for async functions"
-- Example: "Code review and optimization suggestions"
-
-**Key Prompts Used:**
-- "Create a REST API endpoint for user authentication"
-- "Debug this async function that's causing race conditions"
-- "Optimize this database query for better performance"
-
-**Percentage of AI-generated code:** [Approximately X%]
-
-**Human Contributions:**
-- Architecture design and planning
-- Custom business logic implementation
-- Integration and testing
-- UI/UX design decisions
-
-*Note: Proper documentation of AI usage demonstrates transparency and earns bonus points in evaluation!*
 
 ---
 
 ## Team Contributions
 
-- [Name 1]: [Specific contributions - e.g., Frontend development, API integration, etc.]
-- [Name 2]: [Specific contributions - e.g., Backend development, Database design, etc.]
-- [Name 3]: [Specific contributions - e.g., UI/UX design, Testing, Documentation, etc.]
+- [vygha prasad]: [Frontend development, API integration, and UI design.]
+- [Aiswarya.s]: [Backend development, database design, API creation, and system deployment.]
 
 ---
 

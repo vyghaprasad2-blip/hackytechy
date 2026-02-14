@@ -9,8 +9,8 @@
 ### Team Name: [Hacky Techy]
 
 ### Team Members
-- Member 1: [Aiswarya.s] - [LBSITW]
-- Member 2: [Vygha prasad] - [LBSITW]
+- Member 1: Aiswarya.s - LBSITW
+- Member 2:Vygha prasad - LBSITW
 
 ### Hosted Project Link
 [mention your project hosted link here]

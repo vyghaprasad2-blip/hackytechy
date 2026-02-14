@@ -2,27 +2,27 @@
   <img src="./img.png" alt="Project Banner" width="100%">
 </p>
 
-# [Project Name] 🎯
+# [CERTI CHECK] 🎯
 
 ## Basic Details
 
-### Team Name: [Name]
+### Team Name: [Hacky Techy]
 
 ### Team Members
-- Member 1: [Name] - [College]
-- Member 2: [Name] - [College]
+- Member 1: [Aiswarya.s] - [LBSITW]
+- Member 2: [Vygha prasad] - [LBSITW]
 
 ### Hosted Project Link
 [mention your project hosted link here]
 
 ### Project Description
-[2-3 lines about what your project does]
+[CertiCheck is a full-stack web application designed to eliminate credential fraud by providing a secure,real-time verification system for digital certificates and achievements.The platform serves as a bridge between issuing authorities and verifiers.]
 
 ### The Problem statement
-[What problem are you solving?]
+[Traditional digital certificates are easily forged using image editing software,making it difficult for employers to verify their authenticity.]
 
 ### The Solution
-[How are you solving it?]
+[CertCheck solves this by providing a secure,database-driven verification system that uses unique IDs to instantly validate credentials against against a central "source of truth".]
 
 ---
 
@@ -31,25 +31,22 @@
 ### Technologies/Components Used
 
 **For Software:**
-- Languages used: [e.g., JavaScript, Python, Java]
-- Frameworks used: [e.g., React, Django, Spring Boot]
-- Libraries used: [e.g., axios, pandas, JUnit]
-- Tools used: [e.g., VS Code, Git, Docker]
+- Languages used: [HTML,javascript,css3]
+- Frameworks used: [Express.js,Tailwind CSS]
+- Libraries used: [Mangoose,UUID(v4)]
+- Tools used: [VS code,node.js runtime ,mongoDB Atlas,NPM]
 
-**For Hardware:**
-- Main components: [List main components]
-- Specifications: [Technical specifications]
-- Tools required: [List tools needed]
+
 
 ---
 
 ## Features
 
 List the key features of your project:
-- Feature 1: [Description]
-- Feature 2: [Description]
-- Feature 3: [Description]
-- Feature 4: [Description]
+- Feature 1: [Unique ID Generation]
+- Feature 2: [Dual-Role interface]
+- Feature 3: [cloud-based "source of truth" ]
+- Feature 4: [zero-friction instant verification]
 
 ---
 
@@ -59,21 +56,14 @@ List the key features of your project:
 
 #### Installation
 ```bash
-[Installation commands - e.g., npm install, pip install -r requirements.txt]
+[Installation commands - mkdir certicheck cd certicheck,npm init -y,npm inistall express mongoose uuid,mkdir public]
 ```
 
 #### Run
 ```bash
-[Run commands - e.g., npm start, python app.py]
+[Run commands - mkdir certicheck,cd certicheck,npm init -y,npm install express mongoose uuid,npm i,node server.js ,ctrl+c,ls,node-v,pm -v]
 ```
 
-### For Hardware:
-
-#### Components Required
-[List all components needed with specifications]
-
-#### Circuit Setup
-[Explain how to set up the circuit]
 
 ---
 

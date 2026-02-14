@@ -36,8 +36,6 @@
 - Libraries used: [Mangoose,UUID(v4)]
 - Tools used: [VS code,node.js runtime ,mongoDB Atlas,NPM]
 
-
-
 ---
 
 ## Features
@@ -79,7 +77,9 @@ List the key features of your project:
 ![Screenshot2](Add screenshot 2 here with proper name)
 *Add caption explaining what this shows*
 
-![Screenshot3](Add screenshot 3 here with proper name)
+
+![<img width="896" height="468" alt="Screenshot 2026-02-14 024834" src="https://github.com/user-attachments/assets/fd994a6c-be3b-456c-bf91-a8b262886f7b" />
+](Add screenshot 3 here with proper name)
 *Add caption explaining what this shows*
 
 #### Diagrams
@@ -355,8 +355,7 @@ python script.py -v --format json data.json
 
 *Explain what the video demonstrates - key features, user flow, technical highlights*
 
-### Additional Demos
-[Add any extra demo materials/links - Live site, APK download, online demo, etc.]
+
 
 ---
 
